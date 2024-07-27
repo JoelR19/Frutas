@@ -1,0 +1,32 @@
+body{
+    background-color: indigo;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    --position:0;
+}
+
+.soda{
+    width: 275px;
+    display: grid;
+}
+
+.soda > *{
+    width: 275px;
+    height: 100%;
+    
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.soda .labels{
+    object-fit: cover;
+    mask: url(./images/soda.svg);
+    mask-size: cover;
+    mix-blend-mode: multiply;
+    object-position: calc(275px* var(--position)* -1) 0px;
+    transition: object-position 0.7s ease-out;
+}
+
