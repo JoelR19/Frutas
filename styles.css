@@ -1,32 +1,93 @@
-body{
-    background-color: indigo;
+body {
     margin: 0;
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    --position:0;
+    justify-content: space-between;
+    --position: 0;
+    padding-left: 45px;
+    padding-right: 45px;
 }
 
-.soda{
+.controls {
+    margin-bottom: 20px;
+}
+
+.soda {
     width: 275px;
     display: grid;
 }
 
-.soda > *{
+.soda > * {
     width: 275px;
     height: 100%;
-    
     grid-column: 1;
     grid-row: 1;
 }
 
-.soda .labels{
-    object-fit: cover;
+.soda .labels {
     mask: url(./images/soda.svg);
+    object-fit: cover;
     mask-size: cover;
     mix-blend-mode: multiply;
-    object-position: calc(275px* var(--position)* -1) 0px;
-    transition: object-position 0.7s ease-out;
+    object-position: calc(-275px * var(--position)) 0px;
+    transition: object-position 0.7s;
 }
 
+section {
+    display: flex;
+    position: fixed;
+    z-index: -1;
+    left: calc(-100vw * var(--position));
+    transition: left 0.7s;
+}
+
+section > * {
+    height: 100vh;
+    width: 100vw;
+}
+
+.pear {
+    background-color: #c9e78a;
+}
+
+.apple {
+    background-color: #ffb2b2;
+}
+
+.exotic {
+    background-color: #9c96f6;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 300px;
+    padding: 0;
+    margin: 0;
+}
+
+@keyframes nom {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+button{
+    border-radius: 100px;
+    border: none;
+
+    background-color: rgba(223, 203, 154, 0.3);
+
+}
+
+.btn{
+    width: 60px;
+}
